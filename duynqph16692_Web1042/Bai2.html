@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 1000px;
+            margin: auto;
+            padding: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        form{
+            border: 1px coral solid;
+            padding: 10px 0px;
+            margin-left: 200px;
+            margin-right: 300px;
+        }
+        h2{
+            text-align: center;
+            color:darkturquoise ;
+        }
+        label{
+            margin-left: 15px;
+        }
+        label,input,span{
+            margin-top: 5px ;
+            margin-bottom: 5px ;
+        }
+        .S1{margin-left:15px ;}
+        .S2{padding: 10px;
+        margin-left: 100px;
+        color: cornflowerblue;
+        background-color: cornsilk;
+        border-radius: 5px;
+        }
+        .S2:hover{
+            background: black;
+            color: crimson;
+        }
+        span{
+            color: crimson;
+        }
+    </style>
+    <script>
+        function validate(){
+            var node=document.getElementsByTagName("input");
+            var check=document.getElementsByTagName("span");
+            for(i=0;i<node.length;i++){
+                if(node[i].value=="")
+                    check[i].innerHTML="Vui lòng điền đủ thông tin"
+                else
+                    check[i].innerHTML=""
+            }
+        }
+        function checkmail(){
+            var node=document.getElementsByTagName("input");
+            var check=document.getElementsByTagName("span");
+            var regex=/[a-zA-Z0-0]+@[a-z]+.[a-z]{2-3}$/; 
+            for(i=0;i<node.length;i++){
+                if(!regex.test(node[1].value))
+                    check[1].innerHTML="Nhập đúng định dạng email-Vd:abc123@gmail.com";
+                else
+                    check[1].innerHTML="";
+            }       
+        }
+        function checkpass(){
+            var node=document.getElementsByTagName("input");
+            var check=document.getElementsByTagName("span");
+            var regex=/[a-z]+[1-9]{1}$/;
+            for(i=0;i<node.length;i++){
+                if(!regex.test(node[2].value))
+                check[2].innerHTML="Password phải đủ 6 kí tự và có 1 chữ số.";
+                else
+                check[2].innerHTML="";
+            }
+        }
+        function checkyear(){
+            var node=document.getElementsByTagName("input");
+            var check=document.getElementsByTagName("span");
+            var regex=/[0-9]$/
+            for(i=0;i<node.length;i++){
+                if(!regex.test(node[3].value))
+                check[3].innerHTML="Năm phải là số";
+                else
+                check[3].innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
+        <label for="">User</label><input class="S1" type="text">  <span></span>   <br>
+        <label for="">Email</label> <input class="S1" type="text" onkeyup="checkmail()"> <span></span>   <br>
+        <label for="">Password</label><input class="S1" type="text" onkeyup="checkpass()"> <span></span> <br>
+        <label for="">Số năm làm việc</label><input class="S1" type="text" onkeyup="checkyear()">    <span></span>   <br>
+        <input type="button" value="GỬI" class="S2"onclick="validate()">
+    </form>
+</body>
+</html>

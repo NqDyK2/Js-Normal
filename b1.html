@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <script>
+        var mangImg=[];
+            mangImg[0]="./1.jpg";
+            mangImg[1]="./2.jpg"
+            mangImg[2]="./3.jpg"
+            mangImg[3]="./4.jpg"
+            var i=0;
+            var timeA;
+            function auto(){
+                i++;
+                document.getElementById("anh").src=mangImg[i];
+                if(i==mangImg.length-1)
+                i=+-1;
+                timeA=setTimeout(auto,1500)
+    
+            }
+            window.onload=function(){
+                setTimeout(auto,1500);
+            }
+    </script>
+</head>
+<body>
+
+
+    <img src="./WallPaper/1.jpg" id="anh" alt="" width="500px">
+</body>
+</html>

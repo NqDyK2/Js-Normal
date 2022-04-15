@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Parcel Sandbox</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+
+  <form>
+    <div>
+      <label for="Name">Họ Và Tên</label>
+      <input type="text" name="Name" id="ten" onkeyup="checklength()"/>
+      <span id="check"></span>
+    </div>
+    <br />
+    <div>
+      <label for="Email">Email</label>
+      <input type="text" name="Email" id="mail" onkeyup="checkmail()" />
+      <span id="checkmail"></span>
+    </div>
+    <br />
+    <div>
+      <label for="Phone">Số điện thoại</label>
+      <input type="text" name="Phone" id="phone" onkeyup="checkphone()"/>
+      <span id="checkphone"></span>
+    </div>
+    <br />
+    <!-- Bước 1 tạo thẻ select có id và option có value  -->
+    <select name="" id="lesson" onchange="changePrice()">
+      <option value=""> </option>
+      <option value="HTML">Khóa HTML</option>
+      <option value="JS">Khóa Js</option>
+      <option value="PHP">Khóa PHP</option>
+    </select>
+    <br />
+    <!-- Bước 2 tạo thẻ input có id  -->
+    <div>
+      Học phí
+      <input type="text" id="price" value="" readonly />
+    </div>
+    <div>
+      <label for="hth">Hình thức học</label>
+      <input type="radio" name="dia-diem" id="noi-thanh" />
+      <label for="">Tại Trường</label>
+      <input type="radio" name="dia-diem" id="ngoai-thanh" />
+      <label for="">Học online</label>
+    </div>
+    <button onclick="clickdone(event)"> Gửi</button>
+  </form>
+  <script src="./b2.js"></script>
+  <script src="https://kit.fontawesome.com/da5a23060a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
